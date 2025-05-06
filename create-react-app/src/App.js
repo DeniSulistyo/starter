@@ -9,21 +9,28 @@ const App = () => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
     return (
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.js">
+       <div style={{ padding: '20px' ,}}>
+         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <p>Borang_Visimisi.pdf</p>
+            <button>Download</button>
+        </div>
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.js">
             <div
                 style={{
-                    height: '750px',
-                    width: '900px',
+                    height: '550px',
+                    width: '100%',
                     marginLeft: 'auto',
                     marginRight: 'auto',
+                    marginTop: '20px',  
                 }}
             >
                 <Viewer
-                    fileUrl={`${process.env.PUBLIC_URL}/pdf-open-parameters.pdf`}
+                    fileUrl={`${process.env.PUBLIC_URL}/borang_example.pdf`}
                     plugins={[defaultLayoutPluginInstance]}
                 />
             </div>
         </Worker>
+       </div>
     );
 };
 
